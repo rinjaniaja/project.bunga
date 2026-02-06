@@ -1,0 +1,236 @@
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== BODY ===== */
+body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background: linear-gradient(-45deg, #6a11cb, #2575fc, #7b00ff, #00c6ff);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    color: #fff;
+    line-height: 1.6;
+    transition: background 0.3s, color 0.3s;
+}
+
+/* ===== GRADIENT ANIMATION ===== */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ===== NAV ===== */
+nav {
+    background: rgba(255,255,255,0.95);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 15px 0;
+}
+
+nav li {
+    margin: 0 18px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+    color: #2575fc;
+    border-bottom: 2px solid #2575fc;
+}
+
+/* ===== HEADER ===== */
+header {
+    text-align: center;
+    padding: 70px 20px;
+}
+
+header h1 {
+    font-size: 38px;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 18px;
+    opacity: 0.9;
+}
+
+/* ===== PROFILE IMAGE ===== */
+.profile-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+/* ===== SECTION (CARD) ===== */
+section {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 30px;
+    background: rgba(255,255,255,0.95);
+    border-radius: 18px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    color: #333;
+    transform: translateY(0);
+}
+
+/* ===== SECTION TITLE ===== */
+section h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: #2575fc;
+    border-bottom: 3px solid #2575fc;
+    display: inline-block;
+    padding-bottom: 6px;
+}
+
+/* ===== ABOUT ===== */
+#about p {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+/* ===== GLOBAL PARAGRAPH SPACING ===== */
+p {
+    margin-bottom: 20px;
+    line-height: 1.7;
+}
+
+/* ===== SKILLS ===== */
+#skills ul {
+    list-style: none;
+    margin-top: 15px;
+}
+
+#skills li {
+    background: #f3f6ff;
+    padding: 12px 18px;
+    margin-bottom: 10px;
+    border-left: 5px solid #6a11cb;
+    border-radius: 8px;
+}
+
+/* ===== PROJECTS ===== */
+#projects div {
+    background: #f9f9ff;
+    padding: 20px;
+    margin-top: 15px;
+    border-radius: 12px;
+    transition: 0.3s ease;
+}
+
+#projects div:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+}
+
+#projects h3 {
+    color: #6a11cb;
+}
+
+/* ===== CONTACT ===== */
+.contact-icons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;       /* spasi antar ikon */
+    margin-top: 20px;
+}
+
+.contact-icons a {
+    color: #2575fc;  /* warna ikon */
+    font-size: 65px; /* ukuran ikon lebih besar, standar */
+    transition: transform 0.3s, color 0.3s;
+}
+
+.contact-icons a:hover {
+    color: #6a11cb;  /* warna saat hover */
+    transform: scale(1.2); /* efek melayang */
+}
+
+/* ===== ANIMATION SCROLL ===== */
+.hidden {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===== DARK MODE ===== */
+.dark {
+    background: linear-gradient(-45deg, #1a1a1a, #333, #444, #555);
+    color: #fff;
+}
+
+
+/* ===== SNOW LAYER ===== */
+#snow-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* biar klik tidak terganggu */
+    z-index: 0;           /* pastikan di bawah semua konten */
+}
+
+/* semua section dan header harus di atas salju */
+body > header,
+body > section,
+nav,
+.dark-toggle {
+    position: relative;
+    z-index: 1;  /* pastikan konten di atas salju */
+}
+
+/* salju */
+.snowflake {
+    position: absolute; /* di dalam container */
+    top: -10px;
+    color: #fff;
+    font-size: 10px;
+    pointer-events: none;
+    user-select: none;
+    animation-name: fall;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+/* animasi jatuh */
+@keyframes fall {
+    0% { transform: translateY(0) translateX(0); opacity: 1; }
+    100% { transform: translateY(100vh) translateX(50px); opacity: 0.8; }
+}
+
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    header h1 { font-size: 32px; }
+    header p { font-size: 16px; }
+    section { padding: 30px 20px; }
+    nav ul { flex-direction: column; gap: 15px; }
+}
