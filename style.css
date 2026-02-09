@@ -1,0 +1,372 @@
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== BODY ===== */
+body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background: linear-gradient(-45deg, #2ec4b6, #90dbf4, #f7b2c4, #ffcad4);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    color: #fff;
+    line-height: 1.6;
+    padding-top: 70px;
+}
+
+/* ===== GRADIENT ===== */
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* ===== NAV ===== */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    z-index: 9999;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 15px 0;
+}
+
+nav li {
+    margin: 0 18px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+    color: #2ec4b6;
+    border-bottom: 2px solid #f7b2c4;
+}
+
+/* ===== HERO ===== */
+.hero-split {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    padding: 80px 20px;
+    text-align: left;
+}
+
+.hero-left {
+    flex: 1;
+    text-align: center;
+}
+
+.hero-right {
+    flex: 2;
+}
+
+.hero-right h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.hero-right p {
+    font-size: 18px;
+    opacity: 0.9;
+}
+
+.hero-buttons {
+    margin-top: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 25px;
+    background: #2ec4b6;
+    color: white;
+    text-decoration: none;
+    margin-right: 10px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #f7b2c4;
+}
+
+.btn.outline {
+    background: transparent;
+    border: 2px solid #2ec4b6;
+    color: #2ec4b6;
+}
+
+.btn.outline:hover {
+    background: #2ec4b6;
+    color: white;
+}
+
+/* ===== PROFILE IMAGE ===== */
+.profile-img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    object-fit: cover;
+}
+
+/* ===== SECTION ===== */
+section {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 18px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    color: #333;
+}
+
+/* ===== ABOUT SECTION ===== */
+#about p {
+    margin-bottom: 1.5em; /* spasi antar paragraf */
+    line-height: 1.8;     /* jarak antar baris */
+    font-size: 16px;      /* ukuran font standar */
+}
+
+/* Dark mode About */
+body.dark #about p {
+    color: #e5e7eb;
+}
+
+/* ===== TITLE ===== */
+section h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #2ec4b6;
+    border-bottom: 3px solid #f7b2c4;
+    display: inline-block;
+    padding-bottom: 6px;
+}
+
+/* ===== SKILLS ===== */
+#skills ul {
+    list-style: none;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+#skills li {
+    width: 100%;
+    background: linear-gradient(135deg, #e0f7fa, #ffe4ef);
+    padding: 14px 20px;
+    border-radius: 10px;
+    border-left: 6px solid #2ec4b6;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* ===== PROJECTS ===== */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.project-card {
+    background: #fff0f6;
+    padding: 20px;
+    border-radius: 14px;
+    transition: 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.18);
+}
+
+/* ===== EDUCATION ===== */
+.timeline {
+    position: relative;
+    padding-left: 30px;
+}
+
+.timeline-item {
+    background: #fff0f6;
+    padding: 15px 20px;
+    border-radius: 12px;
+    border-left: 5px solid #2ec4b6;
+    margin-bottom: 15px;
+}
+
+/* ===== CONTACT SECTION ===== */
+.contact-section {
+    text-align: center;
+    background: linear-gradient(135deg, #e0f7fa, #ffe4ef);
+    border-radius: 20px;
+    padding: 50px 30px;
+}
+
+.contact-section h2 {
+    color: #2ec4b6;
+}
+
+.contact-section p {
+    max-width: 500px;
+    margin: 10px auto 30px;
+    color: #444;
+    font-size: 14px;
+}
+
+.contact-icons {
+    display: flex;
+    justify-content: center; /* ⬅️ ini yang bikin ke tengah */
+    align-items: center;
+    gap: 40px;
+
+    margin-left: 40px; /* ⬅️ geser ke kanan */
+}
+
+.contact-icons a {
+    background: #fff;
+    padding: 14px 26px;   /* 🔹 tinggi & lebar tombol */
+    border-radius: 999px; /* biar oval */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+    font-size: 18px;      /* 🔹 ukuran icon & teks */
+    color: #2ec4b6;
+    transition: 0.3s ease;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;            /* jarak icon & teks */
+}
+
+
+.contact-icons a:hover {
+    transform: translateY(-8px) scale(1.1);
+    color: #f7b2c4;
+}
+
+/* ===== DARK TOGGLE ===== */
+.dark-toggle {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: #2ec4b6;
+    color: white;
+    border: none;
+    padding: 12px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* ===== DARK MODE IMPROVED ===== */
+body.dark {
+    background: linear-gradient(-45deg, #0f172a, #1e293b, #334155, #020617);
+    color: #e5e7eb;
+}
+
+body.dark nav {
+    background: rgba(15, 23, 42, 0.95);
+}
+
+body.dark nav a {
+    color: #e5e7eb;
+}
+
+body.dark nav a.active,
+body.dark nav a:hover {
+    color: #38bdf8;
+    border-bottom: 2px solid #38bdf8;
+}
+
+body.dark section {
+    background: #0f172a;
+    color: #e5e7eb;
+}
+
+body.dark h2 {
+    color: #38bdf8;
+    border-bottom-color: #38bdf8;
+}
+
+/* Skills, Projects, Education (Timeline) */
+body.dark #skills li,
+body.dark .project-card,
+body.dark .timeline-item {
+    background: #020617;
+    color: #e5e7eb;
+    border-left-color: #38bdf8;
+}
+
+/* Contact */
+body.dark .contact-section {
+    background: linear-gradient(135deg, #020617, #0f172a);
+}
+
+body.dark .contact-icons a {
+    background: #020617;
+    color: #38bdf8;
+}
+
+body.dark .contact-icons a:hover {
+    color: #f472b6;
+}
+
+body.dark .contact-icons span {
+    color: #cbd5e1;
+}
+
+/* ===== SNOW EFFECT ===== */
+#snow-container {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.snowflake {
+    position: absolute;
+    top: -20px;
+    color: white;
+    user-select: none;
+    animation-name: fall;
+    animation-timing-function: linear;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh);
+    }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .hero-split {
+        flex-direction: column;
+        text-align: center;
+    }
+}
